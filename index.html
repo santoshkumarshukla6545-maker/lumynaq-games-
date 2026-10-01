@@ -1,1 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="Play Tic Tac Toe online for free at Lumynaq Games. A fast, smooth and premium two-player browser game."
+  >
+
+  <meta
+    name="keywords"
+    content="Tic Tac Toe, Tic Tac Toe online, free Tic Tac Toe, Lumynaq Games"
+  >
+
+  <meta
+    name="author"
+    content="Lumynaq Games"
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <meta
+    name="theme-color"
+    content="#070910"
+  >
+
+  <meta
+    name="color-scheme"
+    content="dark"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content="Tic Tac Toe Online | Lumynaq Games"
+  >
+
+  <meta
+    property="og:description"
+    content="Play a smooth premium Tic Tac Toe game online for free."
+  >
+
+  <title>
+    Tic Tac Toe Online | Lumynaq Games
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="./style.css"
+  >
+
+</head>
+
+
+<body>
+
+  <div class="background-glow glow-one"></div>
+
+  <div class="background-glow glow-two"></div>
+
+  <div class="background-grid"></div>
+
+
+  <!-- HEADER -->
+
+  <header class="topbar">
+
+    <a
+      href="./index.html"
+      class="brand"
+      aria-label="Lumynaq Games"
+    >
+
+      <span class="brand-logo">
+        L
+      </span>
+
+      <span class="brand-text">
+
+        <strong>
+          Lumynaq
+        </strong>
+
+        <small>
+          Games
+        </small>
+
+      </span>
+
+    </a>
+
+
+    <span class="topbar-badge">
+      FREE GAME
+    </span>
+
+  </header>
+
+
+  <!-- MAIN -->
+
+  <main class="game-container">
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <span class="eyebrow">
+        LUMYNAQ GAMES
+      </span>
+
+      <h1>
+        TIC TAC TOE
+      </h1>
+
+      <p>
+        Simple to play. Smooth to enjoy.
+      </p>
+
+    </section>
+
+
+    <!-- SCOREBOARD -->
+
+    <section
+      class="score-area"
+      aria-label="Game scoreboard"
+    >
+
+
+      <div
+        class="player-card player-x active"
+        id="playerXCard"
+      >
+
+        <div class="player-top">
+
+          <span>
+            PLAYER
+          </span>
+
+          <b>
+            X
+          </b>
+
+        </div>
+
+
+        <strong id="scoreX">
+          0
+        </strong>
+
+
+        <small id="statusX">
+          YOUR TURN
+        </small>
+
+      </div>
+
+
+      <div class="round-card">
+
+        <span>
+          ROUND
+        </span>
+
+        <strong id="roundNumber">
+          1
+        </strong>
+
+      </div>
+
+
+      <div
+        class="player-card player-o"
+        id="playerOCard"
+      >
+
+        <div class="player-top">
+
+          <span>
+            PLAYER
+          </span>
+
+          <b>
+            O
+          </b>
+
+        </div>
+
+
+        <strong id="scoreO">
+          0
+        </strong>
+
+
+        <small id="statusO">
+          WAITING
+        </small>
+
+      </div>
+
+    </section>
+
+
+    <!-- TURN -->
+
+    <section
+      class="turn-box"
+      aria-live="polite"
+    >
+
+      <span
+        class="turn-indicator"
+        id="turnIndicator"
+      ></span>
+
+      <span id="turnText">
+        Player X's turn
+      </span>
+
+    </section>
+
+
+    <!-- BOARD -->
+
+    <section class="game-board-wrapper">
+
+      <div
+        class="game-board"
+        id="gameBoard"
+        role="grid"
+        aria-label="Tic Tac Toe board"
+      >
+
+
+        <button
+          class="cell"
+          type="button"
+          data-index="0"
+          aria-label="Cell 1"
+        ></button>
+
+
+        <button
+          class="cell"
+          type="button"
+          data-index="1"
+          aria-label="Cell 2"
+        ></button>
+
+
+        <button
+          class="cell"
+          type="button"
+          data-index="2"
+          aria-label="Cell 3"
+        ></button>
+
+
+        <button
+          class="cell"
+          type="button"
+          data-index="3"
+          aria-label="Cell 4"
+        ></button>
+
+
+        <button
+          class="cell"
+          type="button"
+          data-index="4"
+          aria-label="Cell 5"
+        ></button>
+
+
+        <button
+          class="cell"
+          type="button"
+          data-index="5"
+          aria-label="Cell 6"
+        ></button>
+
+
+        <button
+          class="cell"
+          type="button"
+          data-index="6"
+          aria-label="Cell 7"
+        ></button>
+
+
+        <button
+          class="cell"
+          type="button"
+          data-index="7"
+          aria-label="Cell 8"
+        ></button>
+
+
+        <button
+          class="cell"
+          type="button"
+          data-index="8"
+          aria-label="Cell 9"
+        ></button>
+
+
+        <!-- Decorative line. It NEVER receives pointer events. -->
+
+        <span
+          class="winning-line"
+          id="winningLine"
+          aria-hidden="true"
+        ></span>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- RESULT -->
+
+    <section
+      class="result-card hidden"
+      id="resultCard"
+      aria-live="assertive"
+    >
+
+      <div
+        class="result-icon"
+        id="resultIcon"
+      >
+        ★
+      </div>
+
+
+      <div class="result-content">
+
+        <span>
+          ROUND COMPLETE
+        </span>
+
+        <h2 id="resultTitle">
+          Player X Wins
+        </h2>
+
+        <p id="resultDescription">
+          Three in a row!
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- BUTTONS -->
+
+    <section class="buttons">
+
+      <button
+        type="button"
+        class="main-button"
+        id="newRoundButton"
+      >
+
+        <span>
+          ↻
+        </span>
+
+        New Round
+
+      </button>
+
+
+      <button
+        type="button"
+        class="secondary-button"
+        id="resetButton"
+      >
+
+        Reset Score
+
+      </button>
+
+    </section>
+
+
+    <!-- INSTRUCTIONS -->
+
+    <section class="instructions">
+
+      <div class="instruction-icon">
+        ?
+      </div>
+
+
+      <div>
+
+        <h2>
+          How to Play
+        </h2>
+
+        <p>
+          Take turns placing X and O.
+          Get three marks in a row, column
+          or diagonal to win the round.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <span>
+      ©
+      <span id="year"></span>
+      Lumynaq Games
+    </span>
+
+    <span>
+      Play • Compete • Repeat
+    </span>
+
+  </footer>
+
+
+  <script
+    src="./script.js"
+    defer
+  ></script>
+
+</body>
+
+    </html>
